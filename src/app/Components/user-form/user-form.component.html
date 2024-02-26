@@ -1,0 +1,70 @@
+<h1 mat-dialog-title class="title">ADD USER</h1>
+
+<form [formgroup]="registerForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+
+    <div class="row">
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>Select Department</mat-label>
+            <mat-select formControlName="department">
+              <mat-option value="it">IT</mat-option>
+              <mat-option value="hr">HR</mat-option>
+              <mat-option value="sales">SALES</mat-option>
+              <mat-option value="accounts">ACCOUNTING</mat-option>
+              <mat-option value="management">MANAGEMENT</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" type="text" placeholder="Ex. Name">
+          </mat-form-field>
+    </div>
+    <div class="row">
+        
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="mobile" type="text" placeholder="Ex. Mobile">
+          </mat-form-field>
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="text" placeholder="Ex. abc@gmail.com">
+          </mat-form-field>  
+    </div>
+    <div class="row">
+        
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>Select date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="doj">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-radio-group aria-label="Select an option" formControlName="gender" class="mat-input">
+            <mat-label>Gender</mat-label>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+          </mat-radio-group> 
+    </div>
+    <div class="row">
+        
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>Salary</mat-label>
+            <input matInput formControlName="salary" type="text" placeholder="Ex. Mobile">
+          </mat-form-field>
+        <mat-form-field appearance="outline" class="mat-input">
+            <mat-label>User Code</mat-label>
+            <input matInput formControlName="usercode" type="text" placeholder="Ex. abc@gmail.com">
+          </mat-form-field>  
+    </div>
+    <div class="row">
+        <section class="example-section">
+            <mat-checkbox class="example-margin" formControlName="status">Active ?</mat-checkbox>
+          </section>
+    </div>
+</div>
+
+<div mat-dialog-actions style="justify-content: center;" class="action">
+    <button mat-raised-button class="btn-cancel" type="button">CANCEL</button>
+    <button mat-raised-button class="btn-save" type="submit">SAVE</button>
+</div>
+</form>

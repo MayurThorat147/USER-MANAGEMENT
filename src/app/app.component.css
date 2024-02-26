@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.header{
+    background-color: #2196f3;
+    color: white;
+    font-size: 30px;
+    font-family: fantasy;
+}
